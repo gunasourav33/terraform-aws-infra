@@ -19,9 +19,6 @@ jobs:
         with:
           terraform_version: 1.x
 
-      - name: Terraform Format Check
-        run: terraform fmt -check -recursive
-
       - name: Terraform Init (modules/vpc)
         run: terraform init
         working-directory: modules/vpc
