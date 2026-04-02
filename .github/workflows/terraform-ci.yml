@@ -1,0 +1,47 @@
+name: Terraform CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  terraform-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.x
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Init (modules/vpc)
+        run: terraform init
+        working-directory: modules/vpc
+
+      - name: Terraform Validate (modules/vpc)
+        run: terraform validate
+        working-directory: modules/vpc
+
+      - name: Terraform Init (modules/ec2)
+        run: terraform init
+        working-directory: modules/ec2
+
+      - name: Terraform Validate (modules/ec2)
+        run: terraform validate
+        working-directory: modules/ec2
+
+      - name: Terraform Init (modules/s3)
+        run: terraform init
+        working-directory: modules/s3
+
+      - name: Terraform Validate (modules/s3)
+        run: terraform validate
+        working-directory: modules/s3
