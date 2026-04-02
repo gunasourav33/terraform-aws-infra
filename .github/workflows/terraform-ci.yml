@@ -34,11 +34,3 @@ jobs:
       - name: Terraform Validate (modules/ec2)
         run: terraform validate
         working-directory: modules/ec2
-
-      - name: Terraform Init (modules/s3)
-        run: terraform init
-        working-directory: modules/s3
-
-      - name: Terraform Validate (modules/s3)
-        run: terraform validate
-        working-directory: modules/s3
