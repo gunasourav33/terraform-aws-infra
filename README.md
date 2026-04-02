@@ -20,8 +20,6 @@ terraform-aws-infra/
 ├── envs/
 │   ├── dev/
 │   │   └── main.tf
-│   └── prod/
-│       └── main.tf
 └── README.md
 ```
 
