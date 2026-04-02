@@ -2,7 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Terraform](https://img.shields.io/badge/terraform-1.x-purple.svg) ![AWS](https://img.shields.io/badge/AWS-VPC%20%7C%20EC2%20%7C%20S3-orange.svg) ![IaC](https://img.shields.io/badge/IaC-reusable--modules-blue.svg)
 
-Reusable Terraform modules for a standard AWS landing zone. Includes VPC, EC2/ASG, and S3 with reasonable defaults for production use.
+Terraform modules for AWS — VPC, EC2/ASG, and S3. Wired up in a dev environment, ready to extend.
 
 ## Structure
 
